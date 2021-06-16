@@ -10,9 +10,9 @@
 </head>
 
 <body>
-<h2>学生登录</h2>
-<form action="/student/login" method="post">
-    账号：<input type="text" name="studentID" id=""> <br>
+<h2>管理员登录</h2>
+<form action="/admin/login" method="post">
+    账号：<input type="text" name="employeeID" id=""> <br>
     密码: <input type="text" name="password" id=""> <br>
     @csrf
     <input type="submit" value="登录">
