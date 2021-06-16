@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//登陆路由（学生）
+Route::match(['get', 'post'],'student/login', [App\Http\Controllers\Student\StudentController::class, 'login']);
