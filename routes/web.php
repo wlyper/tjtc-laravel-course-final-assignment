@@ -17,8 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//登陆路由（学生）
-Route::match(['get', 'post'],'student/login', [App\Http\Controllers\Student\StudentController::class, 'login']);
-
-//登陆路由（教务管理人员）
+//登陆路由
 Route::match(['get', 'post'],'admin/login', [App\Http\Controllers\Administrator\AdministratorController::class, 'login']);
