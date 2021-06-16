@@ -17,5 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//登陆路由
+//登陆
 Route::match(['get', 'post'],'admin/login', [App\Http\Controllers\Administrator\AdministratorController::class, 'login']);
+
+//首页
+
+
+//学生管理
+    //查看所有学生
+Route::get('admin/students',[\App\Http\Controllers\Administrator\StudentsController::class,'studentsList']);
