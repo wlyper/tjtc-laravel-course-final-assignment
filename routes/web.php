@@ -26,3 +26,5 @@ Route::match(['get', 'post'],'admin/login', [App\Http\Controllers\Administrator\
 //学生管理
     //查看所有学生
 Route::get('admin/students',[\App\Http\Controllers\Administrator\StudentsController::class,'studentsList']);
+    //添加学生
+Route::match(['get', 'post'],'admin/addStudents', [App\Http\Controllers\Administrator\StudentsController::class, 'addStudents']);
