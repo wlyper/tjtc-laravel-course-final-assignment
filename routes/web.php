@@ -30,6 +30,8 @@ Route::get('admin/students',[\App\Http\Controllers\Administrator\StudentsControl
 Route::match(['get', 'post'],'admin/addStudents', [App\Http\Controllers\Administrator\StudentsController::class, 'addStudents']);
     //编辑学生信息
 Route::match(['get', 'post'],'admin/editStudents', [App\Http\Controllers\Administrator\StudentsController::class, 'editStudents']);
+    //删除学生
+Route::get('admin/deleteStudens',[\App\Http\Controllers\Administrator\StudentsController::class,'deleteStudents']);
 
 //课程管理
     //查看所有课程

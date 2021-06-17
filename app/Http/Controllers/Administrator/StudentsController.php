@@ -75,19 +75,17 @@ class StudentsController extends Controller
         }
     }
 
-    //删除用户
-//    public function deleteuser(Request $request){
-//
-//
-//        $id=$request->get('id');
-//        $user=User::find($id);
-//        $res=$user->delete();
-//        if($res){
-//            echo "<script>alert('删除成功');location.href='/admin/index';</script>";
-//        }else{
-//            echo "<script>alert('删除失败');location.href='/admin/index';</script>";
-//        }
-//    }
-//}
+//    删除学生
+    public function deleteStudents(Request $request){
+
+        $id=$request->get('id');
+        $student=Students::find($id);
+        $res=$student->delete();
+        if($res){
+            echo "<script>alert('删除成功');location.href='/admin/students';</script>";
+        }else{
+            echo "<script>alert('删除失败');location.href='/admin/students';</script>";
+        }
+    }
 
 }
