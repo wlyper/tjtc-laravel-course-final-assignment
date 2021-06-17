@@ -35,4 +35,59 @@ class StudentsController extends Controller
             }
         }
     }
+
+    //编辑用户
+    public function editStudents(Request $request){
+        if($request->method()=='GET'){
+            $id=$request->get('id');
+            $student=Students::find($id);
+            return view('administrator.editStudents',compact('student'));
+
+        }else{
+            $input=$request->all();
+
+            $id=$input['id'];
+            $studentName=$input['studentName'];
+            $studentID=$input['studentID'];
+            $gender=$input['gender'];
+            $dateOfBirth=$input['dateOfBirth'];
+            $registrationDate=$input['registrationDate'];
+            $major=$input['major'];
+            $telephone=$input['telephone'];
+
+            $student=User::find($id);
+            $student->id=$id;
+            $student->studentName=$studentName;
+            $student->studentID=$studentID;
+            $student->gender=$gender;
+            $student->dateOfBirth=$dateOfBirth;
+            $student->registrationDate=$registrationDate;
+            $student->major=$major;
+            $student->telephone=$telephone;
+
+
+            $res = $student->save();
+            if($res){
+                echo "<script>alert('编辑成功');location.href='/admin/students';</script>";
+            }else{
+                echo "<script>alert('编辑失败');location.href='/admin/students';</script>";
+            }
+        }
+    }
+
+    //删除用户
+//    public function deleteuser(Request $request){
+//
+//
+//        $id=$request->get('id');
+//        $user=User::find($id);
+//        $res=$user->delete();
+//        if($res){
+//            echo "<script>alert('删除成功');location.href='/admin/index';</script>";
+//        }else{
+//            echo "<script>alert('删除失败');location.href='/admin/index';</script>";
+//        }
+//    }
+//}
+
 }
