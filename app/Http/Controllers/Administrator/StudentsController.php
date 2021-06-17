@@ -12,7 +12,7 @@ class StudentsController extends Controller
 {
     //列出全部学生
     public function studentsList(){
-        $students = DB::table('t_student_profile')->paginate(6);
+        $students = Students::paginate(16);
         return view('administrator.studentsList', compact('students'));
     }
 

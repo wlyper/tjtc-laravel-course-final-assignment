@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::match(['get', 'post'],'admin/login', [App\Http\Controllers\Administrator\AdministratorController::class, 'login']);
 
 //首页
+Route::get('admin',function (){
+    return view('administrator.index');
+});
 
 
 //学生管理
