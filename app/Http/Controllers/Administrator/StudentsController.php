@@ -13,26 +13,15 @@ class StudentsController extends Controller
     //列出全部学生
     public function studentsList(Request $request)
     {
-        //先要验证是否经过登录
-
-        $account = $request->session()->get('account');
-
-        if ($account) {
             $students = Students::paginate(16);
             return view('administrator.studentsList', compact('students'));
-        } else {
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
 
     //添加学生
     public function addStudents(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
             //判断请求方式 如果是 get 请求，显示添加页面；
             //如果是 post 请求，添加学生
             $method = $request->method();
@@ -48,19 +37,13 @@ class StudentsController extends Controller
                     echo "<script>alert('添加失败');location.href='/admin/students';</script>";
                 }
             }
-        } else {
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
 
     //编辑用户
     public function editStudents(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
             if ($request->method() == 'GET') {
                 $id = $request->get('id');
                 $student = Students::find($id);
@@ -96,19 +79,13 @@ class StudentsController extends Controller
                     echo "<script>alert('编辑失败');location.href='/admin/students';</script>";
                 }
             }
-        } else {
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
 
 //    删除学生
     public function deleteStudents(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
             $id = $request->get('id');
             $student = Students::find($id);
             $res = $student->delete();
@@ -117,9 +94,7 @@ class StudentsController extends Controller
             } else {
                 echo "<script>alert('删除失败');location.href='/admin/students';</script>";
             }
-        } else {
-            echo '您未登录，请先登录:<a href="/admin/login">点击登录</a>';
-        }
+
     }
 
 }

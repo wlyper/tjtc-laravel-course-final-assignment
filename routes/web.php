@@ -14,15 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (\Illuminate\Http\Request $request) {
-    //先要验证是否经过登录
 
-    $account = $request->session()->get('account');
-
-    if ($account) {
         return view('welcome');
-    } else {
-        echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-    }
+
 });
 
 //登陆
@@ -60,15 +54,9 @@ Route::match(['get', 'post'],'admin/addCourses',[\App\Http\Controllers\Administr
 
 //校历查询
 Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) {
-    //先要验证是否经过登录
 
-    $account = $request->session()->get('account');
-
-    if ($account) {
         return view('administrator.schoolCalendar');
-    } else {
-        echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-    }
+
 });
 
 //教务公告

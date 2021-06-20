@@ -39,8 +39,7 @@ class AdministratorController extends Controller
             //dd($account);
             $res = DB::table('t_administrator_account')->where('employeeID', $employeeID)->where('password', $password)->first();
             if ($res) {
-//                echo '欢迎登录';
-                return redirect('/admin/');
+                return redirect('/admin/students');
             } else {
                 echo "<script>alert('账号或者密码有错');location.href='/admin/login';</script>";
             }
