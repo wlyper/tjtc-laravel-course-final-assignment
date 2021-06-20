@@ -13,7 +13,6 @@ class AdministratorController extends Controller
         $request->session()->flush();
         echo "<script>alert('已退出');location.href='/admin/login';</script>";
     }
-    //处理教务管理人员登录
     /**
      * @throws \Illuminate\Validation\ValidationException
      */

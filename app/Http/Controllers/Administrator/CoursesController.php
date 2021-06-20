@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 class CoursesController extends Controller
 {
 
-    //列出全部
     public function coursesList(Request $request)
     {
 
@@ -71,8 +70,6 @@ class CoursesController extends Controller
 
     public function addCourses(Request $request)
     {
-            //判断请求方式 如果是 get 请求，显示添加页面；
-            //如果是 post 请求，添加学生
             $method = $request->method();
             if ($method == 'GET') {
                 return view('administrator.addCourses');

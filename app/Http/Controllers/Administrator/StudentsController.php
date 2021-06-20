@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class StudentsController extends Controller
 {
-    //列出全部学生
     public function studentsList(Request $request)
     {
             $students = Students::paginate(16);
@@ -18,12 +17,9 @@ class StudentsController extends Controller
 
     }
 
-    //添加学生
     public function addStudents(Request $request)
     {
 
-            //判断请求方式 如果是 get 请求，显示添加页面；
-            //如果是 post 请求，添加学生
             $method = $request->method();
             if ($method == 'GET') {
                 return view('administrator.addStudents');
@@ -40,7 +36,6 @@ class StudentsController extends Controller
 
     }
 
-    //编辑用户
     public function editStudents(Request $request)
     {
 
@@ -82,7 +77,6 @@ class StudentsController extends Controller
 
     }
 
-//    删除学生
     public function deleteStudents(Request $request)
     {
 
