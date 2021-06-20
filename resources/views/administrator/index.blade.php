@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/admin/students">
                             <span data-feather="file"></span>
                             学生管理
                         </a>

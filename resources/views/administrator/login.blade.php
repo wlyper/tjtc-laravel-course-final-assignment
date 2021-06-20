@@ -119,7 +119,7 @@
 <body class="text-center">
 
 <main class="form-signin">
-    <form>
+    <form action="/admin/login" method="post">
         <div class="mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" fill="currentColor"
                  class="bi bi-person-badge-fill" viewBox="0 0 16 16">
@@ -131,23 +131,29 @@
         <br>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="employeeID">
             <label for="floatingInput">工号</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
             <label for="floatingPassword">密码</label>
         </div>
-
-{{--        <div class="checkbox mb-3">--}}
-{{--            <label>--}}
-{{--                <input type="checkbox" value="remember-me"> Remember me--}}
-{{--            </label>--}}
-{{--        </div>--}}
+        @csrf
         <hr>
         <button id="sign-in-btn" class="w-100 btn btn-lg btn-primary" type="submit">登陆</button>
         <p class="mt-5 mb-3 text-muted">&copy; 汪汪组</p>
     </form>
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $e)
+                    <li>
+                        {{$e}}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </main>
 
 <img src="https://assets.website-files.com/5e51b3b0337309d672efd94c/5e51cc5933d368febc351897_footer-img.svg" alt="" id="foot-background">
