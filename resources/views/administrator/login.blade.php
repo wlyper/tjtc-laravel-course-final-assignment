@@ -138,11 +138,12 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
             <label for="floatingPassword">密码</label>
         </div>
-
         @csrf
         <hr>
         <button id="sign-in-btn" class="w-100 btn btn-lg btn-primary" type="submit">登陆</button>
         <p class="mt-5 mb-3 text-muted">&copy; 汪汪组</p>
+        <br>
+        <br>
     </form>
     @if(count($errors)>0)
         <div class="alert alert-danger">

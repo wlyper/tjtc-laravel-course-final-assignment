@@ -67,3 +67,8 @@ Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) 
         echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
     }
 });
+
+//教务公告
+//查看公告
+Route::get('admin/notice',[\App\Http\Controllers\Administrator\NoticeController::class,'noticeList']);
+Route::match(['get','post'],'admin/addNotice',[\App\Http\Controllers\Administrator\NoticeController::class,'addNotice']);
