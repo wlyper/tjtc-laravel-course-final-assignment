@@ -277,7 +277,7 @@
             </div>
             <img class="schoolCalendar"
                  src="http://www.tjtc.edu.cn/__local/6/90/3C/157F7C39EDA2D099635B7BB8D91_BCF10890_20F66.png" alt=""
-            width="70%">
+                 width="70%">
         </main>
     </div>
 </div>

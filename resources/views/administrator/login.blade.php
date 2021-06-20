@@ -138,6 +138,7 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
             <label for="floatingPassword">密码</label>
         </div>
+
         @csrf
         <hr>
         <button id="sign-in-btn" class="w-100 btn btn-lg btn-primary" type="submit">登陆</button>

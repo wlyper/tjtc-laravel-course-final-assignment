@@ -13,12 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    //先要验证是否经过登录
+
+    $account = $request->session()->get('account');
+
+    if ($account) {
+        return view('welcome');
+    } else {
+        echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
+    }
 });
 
 //登陆
 Route::match(['get', 'post'], 'admin/login', [App\Http\Controllers\Administrator\AdministratorController::class, 'login']);
+
+//退出
+Route::get('admin/loginout', [\App\Http\Controllers\Administrator\AdministratorController::class, 'loginout']);
 
 //首页
 Route::get('admin', function () {
@@ -40,11 +51,19 @@ Route::get('admin/deleteStudents', [\App\Http\Controllers\Administrator\Students
 //查看所有课程
 Route::get('admin/courses', [\App\Http\Controllers\Administrator\CoursesController::class, 'coursesList']);
 //修改课程信息
-Route::match(['get', 'post'], 'admin/editCourses',[\App\Http\Controllers\Administrator\CoursesController::class,'editCourses']);
+Route::match(['get', 'post'], 'admin/editCourses', [\App\Http\Controllers\Administrator\CoursesController::class, 'editCourses']);
 //删除课程
 Route::get('admin/deleteCourses', [\App\Http\Controllers\Administrator\CoursesController::class, 'deleteCourses']);
 
 //校历查询
-Route::get('admin/schoolCalendar',function (){
-    return view('administrator.schoolCalendar');
+Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) {
+    //先要验证是否经过登录
+
+    $account = $request->session()->get('account');
+
+    if ($account) {
+        return view('administrator.schoolCalendar');
+    } else {
+        echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
+    }
 });
