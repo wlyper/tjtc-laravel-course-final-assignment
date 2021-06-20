@@ -1,189 +1,4 @@
-{{--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"--}}
-{{--     aria-hidden="true">--}}
-{{--    <div class="modal-dialog">--}}
-{{--        <div class="modal-content">--}}
-{{--            <div class="modal-header">--}}
-{{--                <h5 class="modal-title" id="exampleModalLabel">New message</h5>--}}
-{{--                <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
-{{--                        aria-label="Close"></button>--}}
-{{--            </div>--}}
-{{--            <div class="modal-body">--}}
-{{--                <form class="needs-validation" novalidate action="/admin/editCourses"--}}
-{{--                      method="post">--}}
-{{--                                                                <input type="hidden" name="id" value="{{$cor->id}}"/>--}}
-{{--                    <div class="col-12">--}}
-{{--                        <label for="courseName" class="form-label">课程名</label>--}}
-{{--                        <input type="text" class="form-control" id="courseName"--}}
-{{--                               placeholder=""--}}
-{{--                               value="{{$cor->courseName}}" name="courseName"--}}
-{{--                               required>--}}
-{{--                        <div class="invalid-feedback">--}}
-{{--                            请输入课程名！--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-12">--}}
-{{--                            <label for="courseID" class="form-label">课程编号</label>--}}
-{{--                            <input type="text" class="form-control" id="courseID"--}}
-{{--                                   placeholder="" value="{{$cor->courseID}}"--}}
-{{--                                   name="courseID" required>--}}
-{{--                            <div class="invalid-feedback">--}}
-{{--                                请输入课程编号！--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-12">--}}
-{{--                            <label for="courseTeacher" class="form-label">任课教师</label>--}}
-{{--                            <input type="text" class="form-control" id="courseTeacher"--}}
-{{--                                   placeholder="" value="{{$cor->courseTeacher}}"--}}
-{{--                                   name="courseTeacher" required>--}}
-{{--                            <div class="invalid-feedback">--}}
-{{--                                请输入任课教师！--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-12">--}}
-{{--                            <label for="courseLocation" class="form-label">上课地点</label>--}}
-{{--                            <input type="text" class="form-control" id="courseLocation"--}}
-{{--                                   placeholder="" value="{{$cor->courseLocation}}"--}}
-{{--                                   name="courseLocation" required>--}}
-{{--                            <div class="invalid-feedback">--}}
-{{--                                请输入上课地点！--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-12">--}}
-{{--                            <label for="courseTime" class="form-label">上课时间</label>--}}
-{{--                            <input type="text" class="form-control" id="courseTime"--}}
-{{--                                   placeholder="" value="{{$cor->courseTime}}" name="courseTime"--}}
-{{--                                   required>--}}
-{{--                            <div class="invalid-feedback">--}}
-{{--                                请输上课时间！--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-12">--}}
-{{--                            <label for="periodWeeks" class="form-label">起始周次</label>--}}
-{{--                            <input type="text" class="form-control" id="periodWeeks"--}}
-{{--                                   placeholder="" value="{{$cor->periodWeeks}}"--}}
-{{--                                   name="periodWeeks" required>--}}
-{{--                            <div class="invalid-feedback">--}}
-{{--                                请输起始周次！--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        @csrf--}}
-{{--                        --}}{{--                                                <button class="w-100 btn btn-primary btn-lg" type="submit">提交</button>--}}
-{{--                    </div>--}}
-{{--            </div>--}}
-{{--            <div class="modal-footer">--}}
-{{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close--}}
-{{--                </button>--}}
-{{--                <button type="submit" class="btn btn-primary">确认</button>--}}
-{{--            </div>--}}
-{{--            </form>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
-
-{{--<head>--}}
-{{--    <meta charset="UTF-8">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
-{{--    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->--}}
-{{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"--}}
-{{--          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">--}}
-{{--    <title>首页</title>--}}
-{{--</head>--}}
-
-{{--<body>--}}
-{{--<div class="container">--}}
-{{--    <!-- 这是头部 -->--}}
-{{--    <div class="jumbotron">--}}
-{{--        <h1>用户管理信息系统</h1>--}}
-{{--        <p>...</p>--}}
-{{--    </div>--}}
-{{--    <!-- 这是导航 -->--}}
-{{--    <div class="row">--}}
-{{--        <div class="col-md-8 col-md-offset-2">--}}
-{{--            <ul class="nav nav-tabs">--}}
-{{--                <li role="presentation" class="active"><a href="#">首页</a></li>--}}
-{{--                <li role="presentation"><a href="#">添加用户</a></li>--}}
-{{--                <li role="presentation"><a href="#">图书管理</a></li>--}}
-{{--                <li role="presentation"><a href="#">留言管理</a></li>--}}
-{{--                <li role="presentation"><a href="#">联系我们</a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-{{--    <!-- 主体内容 -->--}}
-{{--    <div class="row">--}}
-{{--        <div class="col-md-8 col-md-offset-2">--}}
-{{--            <h2>编辑用户</h2>--}}
-{{--            <form class="form-horizontal" action="/admin/editStudents" method="post">--}}
-{{--                <input type="hidden" name="id" value="{{$student->id}}"/>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputStudentName" class="col-sm-2 control-label">姓名</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputStudentName" placeholder="姓名" name="studentName" value="{{$student->studentName}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputStudentID" class="col-sm-2 control-label">学号</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputStudentID" placeholder="学号" name="studentID" value="{{$student->studentID}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputGender" class="col-sm-2 control-label">性别</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputGender" placeholder="性别" name="gender" value="{{$student->gender}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputDateOfBirth" class="col-sm-2 control-label">出生日期</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputDateOfBirth" placeholder="出生日期" name="dateOfBirth" value="{{$student->dateOfBirth}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputRegistrationDate" class="col-sm-2 control-label">入学时间</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputRegistrationDate" placeholder="入学时间" name="registrationDate" value="{{$student->registrationDate}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputMajor" class="col-sm-2 control-label">专业</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputMajor" placeholder="专业" name="major" value="{{$student->major}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <label for="inputTelephone" class="col-sm-2 control-label">手机</label>--}}
-{{--                    <div class="col-sm-10">--}}
-{{--                        <input type="text" class="form-control" id=inputTelephone" placeholder="手机" name="telephone" value="{{$student->telephone}}">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-sm-offset-2 col-sm-10">--}}
-{{--                    <button type="submit" class="btn btn-default">提交</button>--}}
-{{--                </div>--}}
-{{--        </div>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<!-- 底部内容 -->--}}
-
-{{--</div>--}}
-
-
-{{--</body>--}}
-
-{{--</html>--}}
-
-
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -192,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>修改课程信息</title>
+    <title>添加公告</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -226,13 +41,12 @@
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" fill="currentColor"
-                 class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                <path fill-rule="evenodd"
-                      d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
             </svg>
-            <h2>修改课程信息</h2>
+            <br>
+            <br>
+            <h2>添加公告</h2>
             <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
         </div>
 
@@ -269,7 +83,7 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="noticeImage" class="form-label">上课地点</label>
+                        <label for="noticeImage" class="form-label">公告图片</label>
                         <input type="file" class="form-control" id="noticeImage"
                                placeholder="noticeImage"
                                name="noticeImage" required>
