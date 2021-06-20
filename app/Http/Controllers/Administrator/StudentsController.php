@@ -55,7 +55,7 @@ class StudentsController extends Controller
             $major=$input['major'];
             $telephone=$input['telephone'];
 
-            $student=User::find($id);
+            $student=Students::find($id);
             $student->id=$id;
             $student->studentName=$studentName;
             $student->studentID=$studentID;
