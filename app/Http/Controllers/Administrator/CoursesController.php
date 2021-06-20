@@ -10,28 +10,18 @@ use Illuminate\Support\Facades\DB;
 class CoursesController extends Controller
 {
 
-    //列出全部学生
+    //列出全部
     public function coursesList(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
             $courses = Courses::paginate(16);
             return view('administrator.coursesList', compact('courses'));
-        } else {
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
 
     public function editCourses(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
         if ($request->method() == 'GET') {
             $id = $request->get('id');
             $courses = Courses::find($id);
@@ -62,18 +52,12 @@ class CoursesController extends Controller
                 echo "<script>alert('编辑失败');location.href='/admin/courses';</script>";
             }
         }
-        }else{
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
 
     public function deleteCourses(Request $request)
     {
-        //先要验证是否经过登录
 
-        $account = $request->session()->get('account');
-
-        if ($account) {
         $id = $request->get('id');
         $courses = Courses::find($id);
         $res = $courses->delete();
@@ -82,8 +66,27 @@ class CoursesController extends Controller
         } else {
             echo "<script>alert('删除失败');location.href='/admin/courses';</script>";
         }
-        }else{
-            echo '您未登录，请先登录:<a href="/admin/login">重新登录</a>';
-        }
+
     }
+
+    public function addCourses(Request $request)
+    {
+            //判断请求方式 如果是 get 请求，显示添加页面；
+            //如果是 post 请求，添加学生
+            $method = $request->method();
+            if ($method == 'GET') {
+                return view('administrator.addCourses');
+            } else {
+                $input = $request->all();
+                $courses = Courses::create($input);
+                $res = $courses->save();
+                if ($res) {
+                    echo "<script>alert('添加成功');location.href='/admin/courses';</script>";
+                } else {
+                    echo "<script>alert('添加失败');location.href='/admin/courses';</script>";
+                }
+            }
+
+    }
+
 }

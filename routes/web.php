@@ -54,6 +54,9 @@ Route::get('admin/courses', [\App\Http\Controllers\Administrator\CoursesControll
 Route::match(['get', 'post'], 'admin/editCourses', [\App\Http\Controllers\Administrator\CoursesController::class, 'editCourses']);
 //删除课程
 Route::get('admin/deleteCourses', [\App\Http\Controllers\Administrator\CoursesController::class, 'deleteCourses']);
+//添加课程
+Route::match(['get', 'post'],'admin/addCourses',[\App\Http\Controllers\Administrator\CoursesController::class,'addCourses']);
+
 
 //校历查询
 Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) {
