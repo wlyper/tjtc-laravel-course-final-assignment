@@ -39,3 +39,12 @@ Route::get('admin/deleteStudents', [\App\Http\Controllers\Administrator\Students
 //课程管理
 //查看所有课程
 Route::get('admin/courses', [\App\Http\Controllers\Administrator\CoursesController::class, 'coursesList']);
+//修改课程信息
+Route::match(['get', 'post'], 'admin/editCourses',[\App\Http\Controllers\Administrator\CoursesController::class,'editCourses']);
+//删除课程
+Route::get('admin/deleteCourses', [\App\Http\Controllers\Administrator\CoursesController::class, 'deleteCourses']);
+
+//校历查询
+Route::get('admin/schoolCalendar',function (){
+    return view('administrator.schoolCalendar');
+});

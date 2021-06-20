@@ -1,3 +1,90 @@
+{{--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"--}}
+{{--     aria-hidden="true">--}}
+{{--    <div class="modal-dialog">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="exampleModalLabel">New message</h5>--}}
+{{--                <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
+{{--                        aria-label="Close"></button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
+{{--                <form class="needs-validation" novalidate action="/admin/editCourses"--}}
+{{--                      method="post">--}}
+{{--                                                                <input type="hidden" name="id" value="{{$cor->id}}"/>--}}
+{{--                    <div class="col-12">--}}
+{{--                        <label for="courseName" class="form-label">课程名</label>--}}
+{{--                        <input type="text" class="form-control" id="courseName"--}}
+{{--                               placeholder=""--}}
+{{--                               value="{{$cor->courseName}}" name="courseName"--}}
+{{--                               required>--}}
+{{--                        <div class="invalid-feedback">--}}
+{{--                            请输入课程名！--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-12">--}}
+{{--                            <label for="courseID" class="form-label">课程编号</label>--}}
+{{--                            <input type="text" class="form-control" id="courseID"--}}
+{{--                                   placeholder="" value="{{$cor->courseID}}"--}}
+{{--                                   name="courseID" required>--}}
+{{--                            <div class="invalid-feedback">--}}
+{{--                                请输入课程编号！--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-12">--}}
+{{--                            <label for="courseTeacher" class="form-label">任课教师</label>--}}
+{{--                            <input type="text" class="form-control" id="courseTeacher"--}}
+{{--                                   placeholder="" value="{{$cor->courseTeacher}}"--}}
+{{--                                   name="courseTeacher" required>--}}
+{{--                            <div class="invalid-feedback">--}}
+{{--                                请输入任课教师！--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-12">--}}
+{{--                            <label for="courseLocation" class="form-label">上课地点</label>--}}
+{{--                            <input type="text" class="form-control" id="courseLocation"--}}
+{{--                                   placeholder="" value="{{$cor->courseLocation}}"--}}
+{{--                                   name="courseLocation" required>--}}
+{{--                            <div class="invalid-feedback">--}}
+{{--                                请输入上课地点！--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-12">--}}
+{{--                            <label for="courseTime" class="form-label">上课时间</label>--}}
+{{--                            <input type="text" class="form-control" id="courseTime"--}}
+{{--                                   placeholder="" value="{{$cor->courseTime}}" name="courseTime"--}}
+{{--                                   required>--}}
+{{--                            <div class="invalid-feedback">--}}
+{{--                                请输上课时间！--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-12">--}}
+{{--                            <label for="periodWeeks" class="form-label">起始周次</label>--}}
+{{--                            <input type="text" class="form-control" id="periodWeeks"--}}
+{{--                                   placeholder="" value="{{$cor->periodWeeks}}"--}}
+{{--                                   name="periodWeeks" required>--}}
+{{--                            <div class="invalid-feedback">--}}
+{{--                                请输起始周次！--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @csrf--}}
+{{--                        --}}{{--                                                <button class="w-100 btn btn-primary btn-lg" type="submit">提交</button>--}}
+{{--                    </div>--}}
+{{--            </div>--}}
+{{--            <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close--}}
+{{--                </button>--}}
+{{--                <button type="submit" class="btn btn-primary">确认</button>--}}
+{{--            </div>--}}
+{{--            </form>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
 {{--<!DOCTYPE html>--}}
 {{--<html lang="en">--}}
 
@@ -105,7 +192,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>修改学生信息</title>
+    <title>修改课程信息</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -145,93 +232,76 @@
                 <path fill-rule="evenodd"
                       d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
             </svg>
-            <h2>修改学生信息</h2>
+            <h2>修改课程信息</h2>
             <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
         </div>
 
         <div class="">
-            <h4 class="mb-3">学生信息</h4>
-            <form class="needs-validation" novalidate action="/admin/editStudents" method="post">
-                <input type="hidden" name="id" value="{{$student->id}}"/>
-                <div class="row g-3">
-                    <div class="col-sm-6">
-                        <label for="name" class="form-label">姓名</label>
-                        <input type="text" class="form-control" id="name" placeholder=""
-                               value="{{$student->studentName}}" name="studentName" required>
-                        <div class="invalid-feedback">
-                            请输入学生姓名！
-                        </div>
+            <form class="needs-validation" novalidate action="/admin/editCourses"
+                  method="post">
+                <input type="hidden" name="id" value="{{$courses->id}}"/>
+                <div class="col-12">
+                    <label for="courseName" class="form-label">课程名</label>
+                    <input type="text" class="form-control" id="courseName"
+                           placeholder=""
+                           value="{{$courses->courseName}}" name="courseName"
+                           required>
+                    <div class="invalid-feedback">
+                        请输入课程名！
                     </div>
 
-                    <div class="col-sm-6">
-                        <label class="form-label">性别</label>
-                        <select class="form-select" aria-label="Default select example" value="{{$student->gender}}"
-                                name="gender" required>
-                            <option selected>{{$student->gender}}</option>
-                            <option value="男">男</option>
-                            <option value="女">女</option>
-                            <option value="其它">其它</option>
-                        </select>
+                    <div class="col-12">
+                        <label for="courseID" class="form-label">课程编号</label>
+                        <input type="text" class="form-control" id="courseID"
+                               placeholder="" value="{{$courses->courseID}}"
+                               name="courseID" required>
                         <div class="invalid-feedback">
-                            请选择性别！
+                            请输入课程编号！
                         </div>
                     </div>
 
                     <div class="col-12">
-                        <label for="studentID" class="form-label">学号</label>
-                        <input type="text" class="form-control" id="studentID" placeholder=""
-                               value="{{$student->studentID}}" name="studentID" required>
+                        <label for="courseTeacher" class="form-label">任课教师</label>
+                        <input type="text" class="form-control" id="courseTeacher"
+                               placeholder="" value="{{$courses->courseTeacher}}"
+                               name="courseTeacher" required>
                         <div class="invalid-feedback">
-                            请输入学号！
+                            请输入任课教师！
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="col-12">
-                            <label for="dateOfBirth" class="form-label">出生日期</label>
-                            <input type="text" class="form-control" id="dateOfBirth" placeholder=""
-                                   value="{{$student->dateOfBirth}}" name="dateOfBirth" required>
-                            <div class="invalid-feedback">
-                                请输入出生日期！
-                            </div>
+                    <div class="col-12">
+                        <label for="courseLocation" class="form-label">上课地点</label>
+                        <input type="text" class="form-control" id="courseLocation"
+                               placeholder="" value="{{$courses->courseLocation}}"
+                               name="courseLocation" required>
+                        <div class="invalid-feedback">
+                            请输入上课地点！
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="col-12">
-                            <label for="registrationDate" class="form-label">入学时间</label>
-                            <input type="text" class="form-control" id="registrationDate" placeholder=""
-                                   value="{{$student->registrationDate}}" name="registrationDate" required>
-                            <div class="invalid-feedback">
-                                请输入入学时间！
-                            </div>
+                    <div class="col-12">
+                        <label for="courseTime" class="form-label">上课时间</label>
+                        <input type="text" class="form-control" id="courseTime"
+                               placeholder="" value="{{$courses->courseTime}}" name="courseTime"
+                               required>
+                        <div class="invalid-feedback">
+                            请输上课时间！
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="col-12">
-                            <label for="major" class="form-label">专业</label>
-                            <input type="text" class="form-control" id="major" placeholder=""
-                                   value="{{$student->major}}" name="major" required>
-                            <div class="invalid-feedback">
-                                请输学生所读专业！
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="col-12">
-                            <label for="telephone" class="form-label">手机</label>
-                            <input type="text" class="form-control" id="telephone" placeholder=""
-                                   value="{{$student->telephone}}" name="telephone" required>
-                            <div class="invalid-feedback">
-                                请输手机号码！
-                            </div>
+                    <div class="col-12">
+                        <label for="periodWeeks" class="form-label">起始周次</label>
+                        <input type="text" class="form-control" id="periodWeeks"
+                               placeholder="" value="{{$courses->periodWeeks}}"
+                               name="periodWeeks" required>
+                        <div class="invalid-feedback">
+                            请输起始周次！
                         </div>
                     </div>
 
                     <hr class="my-4">
-                    @csrf
+
                     <button class="w-100 btn btn-primary btn-lg" type="submit">提交</button>
                 </div>
             </form>
@@ -274,3 +344,4 @@
 </body>
 
 </html>
+

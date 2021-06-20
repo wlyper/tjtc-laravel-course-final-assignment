@@ -131,8 +131,8 @@
             box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
         }
 
-        .card {
-            margin: 15px;
+        .schoolCalendar {
+            margin: 10px;
         }
     </style>
 
@@ -271,40 +271,13 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">课程管理</h1>
+                <h1 class="h2">校历查询</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group me-2">
-                        <a href="/addCourses">
-                            <button type="button" class="btn btn-dark">添加课程</button>
-                        </a>
-                    </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row row-cols-3">
-                    @foreach($courses as $cor)
-                        <div class="card" style="width: 16rem;" class="col-md-4" data-bs-toggle="modal"
-                             data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                            <div class="card-body">
-                                <h3 class="card-title"><b>{{$cor->courseName}}</b></h3>
-                                <p class="card-text">课程编号：{{$cor->courseID}}</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">任课教师：<b>{{$cor->courseTeacher}}</b></li>
-                                <li class="list-group-item">上课时间：<b>{{$cor->courseTime}}</b></li>
-                                <li class="list-group-item">上课地点：<b>{{$cor->courseLocation}}</b></li>
-                                <li class="list-group-item">起始周次：<b>{{$cor->periodWeeks}}</b></li>
-                            </ul>
-                                <div class="card-body">
-                                        <a href="/admin/editCourses?id={{$cor->id}}"><button type="button" class="btn btn-outline-dark">修改</button></a>
-                                        <a href="/admin/deleteCourses?id={{$cor->id}}"><button type="button" class="btn btn-outline-dark">删除</button></a>
-                                </div>
-                        </div>
-                    @endforeach
-
-                </div>
-
-            </div>
+            <img class="schoolCalendar"
+                 src="http://www.tjtc.edu.cn/__local/6/90/3C/157F7C39EDA2D099635B7BB8D91_BCF10890_20F66.png" alt=""
+            width="70%">
         </main>
     </div>
 </div>
