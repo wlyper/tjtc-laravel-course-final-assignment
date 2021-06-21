@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (\Illuminate\Http\Request $request) {
 
-        return view('welcome');
+        return view('administrator.login');
 
 });
 
@@ -25,7 +25,7 @@ Route::match(['get', 'post'], 'admin/login', [App\Http\Controllers\Administrator
 //退出
 Route::get('admin/loginout', [\App\Http\Controllers\Administrator\AdministratorController::class, 'loginout']);
 
-//首页
+//面板首页
 Route::get('admin', function () {
     return view('administrator.index');
 });
@@ -53,7 +53,7 @@ Route::match(['get', 'post'],'admin/addCourses',[\App\Http\Controllers\Administr
 
 
 //校历查询
-Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) {
+Route::get('admin/schoolCalendar', function () {
 
         return view('administrator.schoolCalendar');
 
@@ -62,4 +62,5 @@ Route::get('admin/schoolCalendar', function (\Illuminate\Http\Request $request) 
 //教务公告
 //查看公告
 Route::get('admin/notice',[\App\Http\Controllers\Administrator\NoticeController::class,'noticeList']);
+//添加公告
 Route::match(['get','post'],'admin/addNotice',[\App\Http\Controllers\Administrator\NoticeController::class,'addNotice']);

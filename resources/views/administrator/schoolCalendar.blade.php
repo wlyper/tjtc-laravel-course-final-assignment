@@ -151,7 +151,7 @@
     </button>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">退出登陆</a>
+            <a class="nav-link" href="loginout">退出登陆</a>
         </li>
     </ul>
 </header>
